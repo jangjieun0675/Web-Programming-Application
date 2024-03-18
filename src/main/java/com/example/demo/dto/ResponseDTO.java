@@ -1,5 +1,6 @@
-package com.example.demo.model;
+package com.example.demo.dto;
 
+import java.util.List;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
@@ -9,10 +10,9 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor
 @AllArgsConstructor
 @Data
-public class TodoEntity {
-  private String id;
-  private String userId;
-  private String title;
-  private boolean done;
+public class ResponseDTO<T> {
+
+  private String error;
+  private List<T> data;
   
 }

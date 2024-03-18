@@ -1,4 +1,6 @@
-package com.example.demo.model;
+package com.example.demo.dto;
+
+import com.example.demo.model.TodoEntity;
 
 import lombok.AllArgsConstructor;
 import lombok.Builder;
@@ -9,10 +11,15 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor
 @AllArgsConstructor
 @Data
-public class TodoEntity {
+public class TodoDTO {
   private String id;
-  private String userId;
   private String title;
   private boolean done;
+
+  public TodoDTO(TodoEntity entity){
+    this.id = entity.getId();
+    this.title = entity.getTitle();
+    this.done = entity.isDone();
+  }
   
 }
